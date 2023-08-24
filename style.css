@@ -100,7 +100,7 @@ nav{
     max-height: calc(100vh - 94px);
 }
 .container{
-    max-width: 95vw !important;
+    max-width: 90vw !important;
 }
 
 
@@ -230,6 +230,10 @@ nav{
 }
 .single-data .data-name{
     font-size: 16px;
+    max-width: 80%;
+    white-space: nowrap;
+overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
