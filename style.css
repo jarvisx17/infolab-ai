@@ -1,0 +1,321 @@
+:root{
+    --black: #000000;
+    --white : #ffffff;
+}
+
+
+
+*, *::after, *::before                      { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body                                        { scroll-behavior: smooth;  background: transparent; overflow-x: hidden; max-width: 2560px; margin: 0 auto;}
+img                                         { max-width: 100%;}
+a                                           { display: inline-block; text-decoration: none!important; transition: all .4s ease-out 0s;}
+span                                        { display: inline-block;}
+ul, ol                                      { padding: 0; list-style: none;}
+input:focus,textarea:focus                  { outline: none; box-shadow: none; }
+
+
+
+
+
+/*=============================================
+=            Typography            =
+=============================================*/
+
+.p-msg{
+    font-size: 14px;
+    line-height: 1;
+}
+p,a,span,ul li, ol li{
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--black);
+    margin:0;
+}
+.w-lg{
+    font-weight: 700;
+}
+.w-reg{
+    font-weight: 400;
+}
+
+
+/*=====  End of Typography  ======*/
+
+
+
+
+/*=============================================
+=            Header            =
+=============================================*/
+header{
+    padding: 14px 0px;
+}
+
+nav{
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+.site-logo{
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.site-logo .logo-main {
+    max-width: 48px;
+    margin-right: 10px;
+}
+.site-logo .logo-main img{
+    width: 100%;
+    aspect-ratio: 1;
+}
+.site-logo .site-name{
+    color: var(--black) !important;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.header-content{
+    margin-right: auto;
+}
+.header-content p{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+
+/*=====  End of Header  ======*/
+
+
+
+
+/*=============================================
+=            main section            =
+=============================================*/
+
+.main-section{
+    padding: 28px 0;
+    max-height: calc(100vh - 94px);
+}
+.container{
+    max-width: 90vw !important;
+}
+
+
+
+/*----------  sidebar start  ----------*/
+.sidebar-main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar-btn-group {
+    margin-bottom: 20px;
+    border: 2px solid var(--black);
+    border-radius: 6px;
+}
+.sidebar-btn-group:last-child{
+    margin-bottom: 0;
+}
+.sidebar-lower .sidebar-btn-group:not(:last-child){
+    margin-bottom: 10px;
+}
+.single-sidebar-btn{
+    width: 100%;
+    display: block;
+    padding: 6px 8px;
+    position: relative;
+    transition: 0.5s; 
+    overflow: hidden;
+}
+
+.single-sidebar-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: black;
+    mix-blend-mode: difference;
+    transition: 0.4s;
+}
+.single-sidebar-btn:hover::after {
+    width: 100%;
+}
+.btn-icn{
+    z-index: 1;
+    transition: 0.4s;
+}
+.btn-name{
+    z-index: 1;
+    transition: 0.4s;
+}
+.single-sidebar-btn.outlined:hover .btn-icn, .single-sidebar-btn.outlined:hover .btn-name  {
+    color: var(--white);
+}
+.single-sidebar-btn.outlined .btn-icn {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+
+.single-sidebar-btn.secondary {
+    display: flex;
+    align-items: center;
+}
+.single-sidebar-btn.secondary .btn-icn{
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.single-sidebar-btn.secondary .btn-icn img{
+    width: 18px;
+}
+.single-sidebar-btn.secondary.active {
+    background: var(--black);
+}
+.single-sidebar-btn.secondary.active .btn-name {
+    color: var(--white);
+}
+
+.single-sidebar-btn.secondary:hover .btn-name{
+    color: var(--white);
+}
+.single-sidebar-btn.secondary.active::after{
+    background: var(--white);
+}
+.single-sidebar-btn.secondary.active:hover .btn-name{
+    color: var(--black);
+}
+
+
+.single-sidebar-btn.secondary .btn-icn{
+    opacity: 0;
+}
+.single-sidebar-btn.secondary.active .btn-icn{
+    opacity: 1;
+}
+
+.uploaded-data-group{
+    padding-top: 20px;
+}
+.uploaded-data-group > .title{
+    font-size: 18px;
+    list-style: 1.2;
+    margin-bottom: 5px;
+}
+
+.uploaded-data-group .data-group{
+    border: 2px solid #B5B5B5;
+    border-radius: 6px;
+}
+.single-data{
+    padding: 6px 4px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+.single-data:not(:last-child){
+    border-bottom: 2px dashed #B5B5B5;
+}
+.single-data .data-icn{
+    margin-right: 5px;
+}
+.single-data .data-icn img{
+    width: 24px;
+}
+.single-data .data-name{
+    font-size: 16px;
+}
+
+
+
+/*----------  sidebar ends  ----------*/
+
+
+/*----------  Chat start  ----------*/
+.chat-main{
+    border: 2px solid var(--black);
+    border-radius: 6px;
+    overflow: hidden scroll;
+    max-height: calc(100vh - 194px);
+    scrollbar-color: var(--black) transparent; 
+}
+.chat-main::-webkit-scrollbar {
+    width: 8px;
+  }
+.chat-main::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+  }
+.chat-main::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 20px;
+    border: 3px solid transparent;
+    
+}
+.single-msg{
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+}
+.single-msg:nth-child(odd){
+    background: #F6F6F7;
+}
+.single-msg:nth-child(even){
+    background: var(--white);
+}
+
+.single-msg .msg-content p:not(:last-child){
+    margin-bottom: 8px;
+}
+
+.single-msg .msg-utils:not(:last-child){
+    margin-right: 8px;
+}
+/*----------  Chat end  ----------*/
+
+
+/*----------  message prompt start  ----------*/
+.msg-prompt{
+    padding: 8px 12px;
+    border: 2px solid var(--black);
+    border-radius: 6px;
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+}
+.msg-prompt .file-btn{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.msg-prompt > input{
+    width: 100%;
+    padding-inline: 40px;
+    border: none;
+    box-shadow: none;
+}
+
+.msg-prompt .send-btn{
+    border: none;
+    background: transparent;
+}
+.msg-prompt .file-input{
+    visibility: hidden;
+    position: absolute;
+}
+/*----------  message prompt end  ----------*/
+
+
+
+
+
+
+
+/*=====  End of main section  ======*/
+

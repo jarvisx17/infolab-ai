@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>infolab.ai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- google fonts start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- google fonts end -->
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="row">
+                    <div class="col-2">
+                        <a href="#" class="site-logo">
+                            <div class="logo-main">
+                                <img src="./assets/site-logo.svg" alt="logo">
+                            </div>
+                            <div class="site-name">
+                                infolab.ai
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <div class="header-content">
+                            <p class="w-lg">
+                                First prototype for infolab.ai using semantic search with vector database.
+                            </p>
+                            <p class="w-reg">
+                                The purpose is to conduct user interviews to understand their needs and pivot for version 2.
+                            </p>
+                            <p class="w-reg">
+                                Only 1 chat at time, if you refresh you restart the conversation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="main-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="sidebar-main">
+                        <div class="sidebar-upper">
+                            <div class="sidebar-btn-group">
+                                <a href="#" class="single-sidebar-btn outlined">
+                                    <span class="w-reg btn-icn">+</span><span class="w-reg btn-name">New Chat</span>
+                                </a>
+                            </div>
+                            <div class="sidebar-btn-group">
+                                <a href="#" class="single-sidebar-btn secondary active ">
+                                    <span class="btn-name w-reg">Professor's Assistant</span><span class="btn-icn"><img
+                                            src="./assets/pencil-edit.svg" alt=""></span>
+                                </a>
+                                <a href="#" class="single-sidebar-btn secondary">
+                                    <span class="w-reg btn-name">Student's Assistant</span><span class="btn-icn"><img
+                                            src="./assets/pencil-edit.svg" alt=""></span>
+                                </a>
+                            </div>
+    
+                            <div class="uploaded-data-group">
+                                <span class="title w-reg">Uploaded data</span>
+                                <div class="data-group">
+                                    <a href="#" class="single-data"><span class="data-icn"><img src="./assets/pdf-icn.svg"
+                                                alt=""></span><span class="data-name w-lg">Physics 1: Textbook
+                                            by...</span></a>
+                                    <a href="#" class="single-data"><span class="data-icn"><img src="./assets/pdf-icn.svg"
+                                                alt=""></span><span class="data-name w-lg">Workbook: Exercises
+                                            o...</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-lower">
+                            <div class="sidebar-btn-group">
+                                <a href="#" class="single-sidebar-btn outlined">
+                                    <span class="w-reg btn-icn"><img src="./assets/register-icn.svg" alt=""></span><span class="w-reg btn-name">Register at infolab</span>
+                                </a>
+                            </div>
+                            <div class="sidebar-btn-group">
+                                <a href="#" class="single-sidebar-btn outlined">
+                                    <span class="w-reg btn-icn"><img src="./assets/feedback-icn.svg" alt=""></span><span class="w-reg btn-name">Give feedback</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="chat-main">
+                        <div class="single-msg">
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <a href="#" class="profile-icn">
+                                    <img src="./assets/person-profile.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <div class="msg-content">
+                                    <p class="w-reg">I've noticed a fluctuation in student attendance across
+                                        different course formats. Could you analyze the attendance data and help me
+                                        understand the patterns</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <div class="msg-utils">
+                                    <a href="#" class="msg-btn"><img src="./assets/edit-icn.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="single-msg">
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <a href="#" class="profile-icn">
+                                    <img src="./assets/bot-profile.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <div class="msg-content">
+                                    <p class="w-reg">Certainly, Professor! Based on the attendance data from the past
+                                        semester, there's a noticeable pattern of higher attendance in hands-on lab
+                                        courses compared to theoretical lectures. Engaging teaching methods and
+                                        real-world applications in lectures may increase attendance. </p>
+                                    <p class="w-reg">Figures [1] and [2] provide visual insights into these trends. </p>
+                                    <p class="w-reg">Would you like me to delve into specific courses or other related
+                                        factors?</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <div class="msg-utils">
+                                    <a href="#" class="msg-btn"><img src="./assets/edit-icn.svg" alt=""></a>
+                                    <a href="#" class="msg-btn"><img src="./assets/like-icn.svg" alt=""></a>
+                                    <a href="#" class="msg-btn"><img src="./assets/dislike-icn.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="single-msg">
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <a href="#" class="profile-icn">
+                                    <img src="./assets/person-profile.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <div class="msg-content">
+                                    <p class="w-reg">Interesting. Can you correlate this attendance pattern with student
+                                        performance in exams? Is there a significant difference in grades between
+                                        students who attend more hands-on sessions versus theoretical ones?</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <div class="msg-utils">
+                                    <a href="#" class="msg-btn"><img src="./assets/edit-icn.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="single-msg">
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <a href="#" class="profile-icn">
+                                    <img src="./assets/bot-profile.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <div class="msg-content">
+                                    <p class="w-reg">Certainly! Analyzing the correlation between attendance and grades,
+                                        there's a strong positive correlation in hands-on lab courses. Students who
+                                        attended more than 80% of lab sessions have an average grade increase of 12%
+                                        compared to those attending less. </p>
+
+                                    <p class="w-reg">However, this correlation is weaker in theoretical lectures. Please
+                                        refer to figures [3] and [4] for a detailed comparison. Would you like to
+                                        explore the reasons behind this?</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <div class="msg-utils">
+                                    <a href="#" class="msg-btn"><img src="./assets/edit-icn.svg" alt=""></a>
+                                    <a href="#" class="msg-btn"><img src="./assets/like-icn.svg" alt=""></a>
+                                    <a href="#" class="msg-btn"><img src="./assets/dislike-icn.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="single-msg">
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <a href="#" class="profile-icn">
+                                    <img src="./assets/person-profile.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <div class="msg-content">
+                                    <p class="w-reg">Yes, please. What are the possible reasons that might explain the
+                                        weaker correlation in theoretical lectures? And do you have any suggestions for
+                                        improving student engagement in those lectures?</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <div class="msg-utils">
+                                    <a href="#" class="msg-btn"><img src="./assets/edit-icn.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="single-msg">
+                            <div class="col-1 d-flex justify-content-center align-items-center">
+                                <a href="#" class="profile-icn">
+                                    <img src="./assets/bot-profile.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-9 d-flex justify-content-center align-items-center">
+                                <div class="msg-content">
+                                    <p class="w-reg">Certainly! Analyzing the correlation between attendance and grades,
+                                        there's a strong positive correlation in hands-on lab courses. Students who
+                                        attended more than 80% of lab sessions have an average grade increase of 12%
+                                        compared to those attending less. </p>
+
+                                    <p class="w-reg">However, this correlation is weaker in theoretical lectures. Please
+                                        refer to figures [3] and [4] for a detailed comparison. Would you like to
+                                        explore the reasons behind this?</p>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-center align-items-center">
+                                <div class="msg-utils">
+                                    <a href="#" class="msg-btn"><img src="./assets/edit-icn.svg" alt=""></a>
+                                    <a href="#" class="msg-btn"><img src="./assets/like-icn.svg" alt=""></a>
+                                    <a href="#" class="msg-btn"><img src="./assets/dislike-icn.svg" alt=""></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="msg-prompt">
+                        <a href="#" class="file-btn"><img src="./assets/file-btn-icn.svg" alt=""></a>
+                        <input type="file" class="file-input" name="" id="">
+                        <input type="text" class="msg-input" placeholder="Send a message">
+                        <button class="send-btn"><img src="./assets/send-btn.svg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
